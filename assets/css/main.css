@@ -4003,7 +4003,8 @@ input, select, textarea {
 /* Banner image overlay with fadebanner.png */
 #banner {
 	position: relative;
-	background: url("images/fadebanner.png") center center / cover no-repeat;
+	background-image: url("../../images/fadebanner.png");
+	
 }
 
 #banner::before {
@@ -4028,3 +4029,4 @@ input, select, textarea {
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
+
