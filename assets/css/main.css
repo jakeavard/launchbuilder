@@ -3999,12 +3999,11 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
-
 /* Banner image overlay with fadebanner.png */
 #banner {
   position: relative;
-  background: url("../../images/fadebanner.png") center center / cover no-repeat;
-  background-attachment: scroll; /* or 'fixed' if you want it static while scrolling */
+  background: url("images/fadebanner.png") center center / cover no-repeat;
+  background-attachment: scroll;
 }
 
 /* Faded overlay */
@@ -4020,14 +4019,14 @@ input, select, textarea {
   animation: fadeInOverlay 1.5s ease-in-out;
 }
 
-/* Ensures text and buttons are above the overlay */
+/* Text + buttons stay above overlay */
 #banner .inner,
 #banner a.more {
   position: relative;
   z-index: 2;
 }
 
-/* Fade-in animation */
+/* Fade animation */
 @keyframes fadeInOverlay {
   from { opacity: 0; }
   to { opacity: 1; }
