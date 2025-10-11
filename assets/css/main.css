@@ -4003,7 +4003,8 @@ input, select, textarea {
 /* Banner image overlay with fadebanner.png */
 #banner {
 	position: relative;
-	background-image: url("../../images/fadebanner.png");
+	background-image: url("../../images/fadebanner.png") center center / cover no-repeat;
+  background-attachment: scroll;
 	
 }
 
@@ -4029,4 +4030,5 @@ input, select, textarea {
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
+
 
