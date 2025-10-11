@@ -2888,7 +2888,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #FFF9F1;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -2977,7 +2977,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #2e3842;
+			background-color: #182440;
 		}
 
 		.wrapper.style3 {
@@ -3887,7 +3887,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #1d242a;
+		background-color: #182440;
 		text-align: center;
 	}
 
@@ -4031,3 +4031,4 @@ input, select, textarea {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
