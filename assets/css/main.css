@@ -4032,4 +4032,10 @@ input, select, textarea {
   to { opacity: 1; }
 }
 
+/* Force consistent CTA background color across all pages */
+#cta.wrapper.style4 {
+  background-color: #46b2b1 !important; /* or replace with your desired brand color */
+  color: #fff !important;
+}
+
 
