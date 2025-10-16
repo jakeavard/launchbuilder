@@ -3352,7 +3352,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #FFF9F1;
+		background: #5F5043;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -4037,6 +4037,7 @@ input, select, textarea {
   background-color: #46b2b1 !important; /* or replace with your desired brand color */
   color: #fff !important;
 }
+
 
 
 
