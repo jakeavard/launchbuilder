@@ -4061,7 +4061,9 @@ table {
     table-layout: auto;
 }
 
-
-
+table td:last-child,
+table th:last-child {
+    text-align: right;
+}
 
 
