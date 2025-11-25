@@ -4038,6 +4038,30 @@ input, select, textarea {
   color: #fff !important;
 }
 
+/* Makes table scrollable on mobile instead of breaking layout */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Prevents long verses from blowing out the width */
+table td, table th {
+    white-space: nowrap;
+}
+
+/* But allows Topic/Subcategory to wrap normally */
+table td:nth-child(2),
+table td:nth-child(3) {
+    white-space: normal;
+}
+
+/* Ensures table uses 100% width and behaves properly */
+table {
+    width: 100%;
+    table-layout: auto;
+}
+
+
 
 
 
