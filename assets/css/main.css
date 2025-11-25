@@ -4066,4 +4066,32 @@ table th:last-child {
     text-align: right;
 }
 
+/* FULL HARD OVERRIDE FOR TEMPLATE TABLES */
+.table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* Forces table to shrink to viewport */
+table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+}
+
+/* Prevent long items from pushing columns off screen */
+table td, 
+table th {
+    white-space: nowrap !important;
+}
+
+/* Allow only Topic + Subcategory to wrap */
+table td:nth-child(2),
+table td:nth-child(3) {
+    white-space: normal !important;
+}
+
+
 
