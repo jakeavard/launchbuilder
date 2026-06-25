@@ -26,7 +26,7 @@ const resources = [
     description: 'A theological reflection on how the Trinity reveals the inner logic of family life.',
     category: 'Theology',
     type: 'article',
-    url: '/images/Morning.pdf',
+    url: '/images/morning.pdf',
   },
   {
     id: '3',
