@@ -18,7 +18,7 @@ const resources = [
     description: 'A printable guide to the Ignatian Examen, adapted for busy fathers and professionals.',
     category: 'Personal Systems',
     type: 'pdf',
-    url: '#',
+    url: '/images/dailyexam.pdf',
   },
   {
     id: '2',
