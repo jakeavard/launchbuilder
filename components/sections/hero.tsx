@@ -30,7 +30,7 @@ export function HeroSection() {
 
           <p className="mx-auto max-w-2xl text-lg sm:text-xl text-muted-foreground leading-relaxed">
             Faith. Family. Mission. Discipline. Reflections, resources, and
-            formation from missionary, father, writer, and builder Jake Avard.
+            formation from missionary, father, writer, and speaker Jake Avard.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

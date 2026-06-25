@@ -1,8 +1,8 @@
 'use client';
 
 import { Mail, MapPin, Clock } from 'lucide-react';
-
-
+import { useState } from 'react';
+import { Send, Check } from 'lucide-react';
 
 export default function ContactPage() {
   return (
@@ -97,16 +97,8 @@ export default function ContactPage() {
   );
 }
 
-import { useState } from 'react';
-import { Send, Check } from 'lucide-react';
-
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   if (submitted) {
     return (
@@ -124,7 +116,9 @@ function ContactForm() {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      action="https://formspree.io/f/xyznnaaj"
+      method="POST"
+      onSubmit={() => setSubmitted(true)}
       className="space-y-6 rounded-2xl bg-white border border-border p-8"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

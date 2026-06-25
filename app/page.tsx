@@ -9,7 +9,7 @@ import { NewsletterSection } from '@/components/sections/newsletter';
 export const metadata: Metadata = {
   title: 'Jake Avard — Build a Meaningful Life',
   description:
-    'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and builder Jake Avard.',
+    'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and speaker Jake Avard.',
   alternates: {
     canonical: 'https://jakeavard.com',
   },

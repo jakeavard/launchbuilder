@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | Jake Avard',
   },
   description:
-    'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and builder Jake Avard.',
+    'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and speaker Jake Avard.',
   keywords: [
     'Jake Avard',
     'Catholic missionary',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Jake Avard',
     title: 'Jake Avard — Build a Meaningful Life',
     description:
-      'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and builder Jake Avard.',
+      'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and speaker Jake Avard.',
     images: [
       {
         url: '/og-image.jpg',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jake Avard — Build a Meaningful Life',
     description:
-      'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and builder Jake Avard.',
+      'Faith. Family. Mission. Discipline. Reflections, resources, and formation from missionary, father, writer, and speaker Jake Avard.',
     images: ['/og-image.jpg'],
     creator: '@jakeavard',
   },

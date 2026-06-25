@@ -4,7 +4,7 @@ import { BookOpen, Hammer, Mic, Mountain } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Learn about Jake Avard — Catholic missionary, husband, father, writer, speaker, and builder helping people build meaningful lives.',
+    'Learn about Jake Avard — Catholic missionary, husband, father, writer, and speaker helping people build meaningful lives.',
   alternates: {
     canonical: 'https://jakeavard.com/about',
   },
@@ -48,7 +48,7 @@ export default function AboutPage() {
               About
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-              Built, Not Found
+              Helping Faithful Men grow in Freedom and multiply the Kingdom
             </h1>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg text-foreground font-medium">
                 I am Jake Avard — a Catholic missionary, husband, father of two,
-                writer, speaker, mountain biker, and builder.
+                writer, speaker, and mountain biker.
               </p>
               <p>
                 For 6 years, I have walked alongside men and families through

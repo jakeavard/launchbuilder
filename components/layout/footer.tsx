@@ -20,7 +20,7 @@ export function Footer() {
               Jake Avard
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Catholic missionary, husband, father, writer, speaker, and builder
+              Catholic missionary, husband, father, writer, and speaker
               helping people build meaningful lives rooted in faith, family,
               mission, discipline, and reality.
             </p>
