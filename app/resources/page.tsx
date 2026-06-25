@@ -58,7 +58,7 @@ const resources = [
     description: 'A worksheet for designing a morning routine rooted in prayer, movement, and intention.',
     category: 'Personal Systems',
     type: 'pdf',
-    url: '#',
+    url: '/images/morning.pdf',
   },
 ];
 
