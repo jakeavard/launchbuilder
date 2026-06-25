@@ -96,21 +96,7 @@ export default function ContactPage() {
 }
 
 function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  if (submitted) {
-    return (
-      <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-white border border-border p-12 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-forest-50 text-forest-700">
-          <Check className="h-6 w-6" />
-        </div>
-        <h3 className="text-xl font-bold text-foreground">Message Sent</h3>
-        <p className="text-muted-foreground">
-          Thank you for reaching out. I will get back to you as soon as possible.
-        </p>
-      </div>
-    );
-  }
+  
 
   return (
     <form
