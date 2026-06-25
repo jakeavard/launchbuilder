@@ -39,10 +39,10 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <a
-                      href="mailto:hello@jakeavard.com"
+                      href="mailto:jake.avard@gmail.com"
                       className="text-muted-foreground hover:text-forest-800 transition-colors"
                     >
-                      hello@jakeavard.com
+                      jake.avard@gmail.com
                     </a>
                   </div>
                 </div>
@@ -116,9 +116,13 @@ function ContactForm() {
 
   return (
     <form
+<<<<<<< HEAD
       action="https://formspree.io/f/xyznnaaj"
       method="POST"
-      onSubmit={() => setSubmitted(true)}
+=======
+      action="https://formspree.io/f/xyznnaaj"
+      method="POST"
+>>>>>>> 59544c99425b17ad3860dbb1b4450be9d0f5782e
       className="space-y-6 rounded-2xl bg-white border border-border p-8"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
