@@ -114,13 +114,8 @@ function ContactForm() {
 
   return (
     <form
-<<<<<<< HEAD
       action="https://formspree.io/f/xyznnaaj"
       method="POST"
-=======
-      action="https://formspree.io/f/xyznnaaj"
-      method="POST"
->>>>>>> 59544c99425b17ad3860dbb1b4450be9d0f5782e
       className="space-y-6 rounded-2xl bg-white border border-border p-8"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
