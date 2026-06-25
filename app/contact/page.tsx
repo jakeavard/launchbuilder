@@ -1,8 +1,6 @@
 'use client';
 
-import { Mail, MapPin, Clock } from 'lucide-react';
-import { useState } from 'react';
-import { Send, Check } from 'lucide-react';
+import { Mail, MapPin, Clock, Send, Check } from 'lucide-react';
 
 export default function ContactPage() {
   return (
