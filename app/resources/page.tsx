@@ -27,6 +27,7 @@ const resources = [
     category: 'Theology',
     type: 'article',
     url: '/images/morning.pdf',
+    active: false,
   },
   {
     id: '3',
@@ -35,6 +36,7 @@ const resources = [
     category: 'Addiction Recovery',
     type: 'pdf',
     url: '#',
+    active: false,
   },
   {
     id: '4',
@@ -43,6 +45,7 @@ const resources = [
     category: 'Family & Fatherhood',
     type: 'pdf',
     url: '#',
+    active: false,
   },
   {
     id: '5',
@@ -85,6 +88,130 @@ const categoryDescriptions: Record<string, string> = {
   'Family & Fatherhood': 'Templates, guides, and reflections for building family culture and intentional fatherhood.',
   'Recommended Books': 'Curated reading lists on faith, fatherhood, mission, and the examined life.',
 };
+
+const memorySystemSections = [
+  {
+    title: 'Authority of the Church',
+    rows: [
+      { category: 'Christ Establishes a Church', topic: 'Peter as the Rock', passage: 'Matthew 16:18–19', ccc: '881–882' },
+      { category: 'Christ Establishes a Church', topic: 'Church Has Binding Authority', passage: 'Matthew 18:17', ccc: '887' },
+      { category: 'Apostolic Foundation', topic: 'Church = Pillar of Truth', passage: '1 Timothy 3:15', ccc: '2032' },
+      { category: 'Apostolic Succession', topic: 'Office Passed On', passage: 'Acts 1:20–26', ccc: '862' },
+      { category: 'Teaching Authority', topic: 'Pass It On', passage: '2 Timothy 2:2', ccc: '83' },
+    ],
+  },
+  {
+    title: 'Scripture & Tradition',
+    rows: [
+      { category: 'Unity of Sources', topic: 'Oral & Written Tradition', passage: '2 Thessalonians 2:15', ccc: '74–83' },
+      { category: 'Unity of Sources', topic: 'Hold to What Was Passed On', passage: '1 Corinthians 11:2', ccc: '78' },
+      { category: 'Scripture Not Self-Interpreting', topic: 'No Private Interpretation', passage: '2 Peter 1:20–21', ccc: '85–87' },
+      { category: 'Scripture Inspired', topic: 'God-Breathed', passage: '2 Timothy 3:16', ccc: '105' },
+      { category: 'Apostolic Authority', topic: 'Authoritative Teaching', passage: 'Titus 2:15', ccc: '80' },
+    ],
+  },
+  {
+    title: 'Papacy',
+    rows: [
+      { category: "Peter's Primacy", topic: 'Feed My Sheep', passage: 'John 21:15–17', ccc: '553' },
+      { category: 'Peter Strengthens the Church', topic: 'Strengthen Your Brothers', passage: 'Luke 22:31–32', ccc: '552' },
+      { category: 'Peter Leads the Church', topic: 'Peter Speaks at Council', passage: 'Acts 15:7–12', ccc: '880' },
+      { category: 'Keys = Authority', topic: 'Keys of the Kingdom', passage: 'Isaiah 22:20–22', ccc: '553' },
+      { category: 'One Shepherd', topic: 'One Visible Leader', passage: 'John 10:16', ccc: '882' },
+    ],
+  },
+  {
+    title: 'Eucharist',
+    rows: [
+      { category: 'Real Presence', topic: 'True Food & Drink', passage: 'John 6:51–58', ccc: '1374' },
+      { category: 'Mass Institution', topic: '"This is My Body"', passage: 'Luke 22:19', ccc: '1339' },
+      { category: 'Reception', topic: 'Communion Participation', passage: '1 Corinthians 10:16', ccc: '1366' },
+      { category: 'Reception', topic: 'Unworthy Reception', passage: '1 Corinthians 11:27–29', ccc: '1385' },
+      { category: 'Eucharist in Prophecy', topic: 'Pure Offering', passage: 'Malachi 1:11', ccc: '1330' },
+    ],
+  },
+  {
+    title: 'Baptism',
+    rows: [
+      { category: 'Baptism Saves', topic: 'Born of Water & Spirit', passage: 'John 3:5', ccc: '1215' },
+      { category: 'Baptism Washes Sin', topic: 'Wash Away Your Sins', passage: 'Acts 22:16', ccc: '1227' },
+      { category: 'Baptism Now Saves', topic: 'Baptism Saves You', passage: '1 Peter 3:21', ccc: '1277' },
+      { category: 'Baptism Necessary', topic: 'One Baptism', passage: 'Ephesians 4:5', ccc: '1225' },
+      { category: 'Cleansed by Christ', topic: 'Washed, Justified, Sanctified', passage: '1 Corinthians 6:11', ccc: '1987' },
+    ],
+  },
+  {
+    title: 'Confession',
+    rows: [
+      { category: 'Christ Delegates', topic: 'Sins Forgiven', passage: 'John 20:21–23', ccc: '1461' },
+      { category: 'Priests Mediate', topic: 'Ministry of Reconciliation', passage: '2 Corinthians 5:18–20', ccc: '1442' },
+      { category: 'Confession Is Biblical', topic: 'Confess Your Sins', passage: 'James 5:16', ccc: '1458' },
+      { category: 'Repentance', topic: 'God Heals the Brokenhearted', passage: 'Psalm 147:3', ccc: '1428' },
+      { category: 'Returning to God', topic: '"I Will Arise and Go"', passage: 'Luke 15:18–24', ccc: '1443' },
+    ],
+  },
+  {
+    title: 'Salvation & Justification',
+    rows: [
+      { category: 'Grace', topic: 'Saved by Grace', passage: 'Ephesians 2:8–10', ccc: '1996' },
+      { category: 'Faith & Works', topic: 'Faith Not Alone', passage: 'James 2:24', ccc: '1815' },
+      { category: 'Cooperation With Grace', topic: 'Work Out Salvation', passage: 'Philippians 2:12–13', ccc: '2001' },
+      { category: 'Call to Holiness', topic: 'Be Holy', passage: '1 Peter 1:15–16', ccc: '2013' },
+      { category: 'Perseverance', topic: 'Whoever Endures Will Be Saved', passage: 'Matthew 24:13', ccc: '2016' },
+    ],
+  },
+  {
+    title: 'Mary & Saints',
+    rows: [
+      { category: "Mary's Honor", topic: 'All Generations Will Call Her Blessed', passage: 'Luke 1:39–45', ccc: '971' },
+      { category: 'Intercession', topic: 'Saints Present Prayers', passage: 'Revelation 5:8', ccc: '956' },
+      { category: 'Mary Intercedes', topic: 'Wedding at Cana', passage: 'John 2:1–11', ccc: '2618' },
+      { category: 'We Pray for One Another', topic: 'Pray for All People', passage: '1 Timothy 2:1', ccc: '2635' },
+      { category: 'One Family', topic: 'Surrounded by Witnesses', passage: 'Hebrews 12:1', ccc: '2683' },
+      { category: 'Mary', topic: 'Ark of New Covenant', passage: '2 Sam 6; Rev 11:19–12:1', ccc: '2676' },
+    ],
+  },
+  {
+    title: 'Purgatory',
+    rows: [
+      { category: 'Postmortem Purification', topic: 'Saved "Through Fire"', passage: '1 Corinthians 3:11–15', ccc: '1031' },
+      { category: 'Purification Implied', topic: 'Forgiveness in the Age to Come', passage: 'Matthew 12:32', ccc: '1031' },
+      { category: 'Prayers for Dead', topic: 'Prayer Helps the Dead', passage: '2 Maccabees 12:44–46', ccc: '1032' },
+      { category: 'Perfection Required', topic: 'Nothing Unclean Shall Enter', passage: 'Revelation 21:27', ccc: '1023' },
+      { category: 'Sanctification', topic: 'Refining Fire', passage: 'Zechariah 13:9', ccc: '1030' },
+    ],
+  },
+  {
+    title: 'Moral Life',
+    rows: [
+      { category: 'Love is Obedience', topic: 'If You Love Me, Keep My Commands', passage: 'John 14:15', ccc: '1454' },
+      { category: 'Law', topic: 'Commandments Not Burdensome', passage: '1 John 5:3', ccc: '2063' },
+      { category: 'Ecclesiology', topic: 'Follow Church Leaders', passage: 'Hebrews 13:17', ccc: '2037' },
+      { category: 'Works', topic: 'Faith Without Works is Dead', passage: 'James 2:17', ccc: '1815' },
+      { category: 'Life in Christ', topic: 'Walk by the Spirit', passage: 'Galatians 5:16–25', ccc: '1829' },
+    ],
+  },
+  {
+    title: 'Priesthood',
+    rows: [
+      { category: 'Priests Offer Sacrifice', topic: 'Every Priest Offers Gifts', passage: 'Hebrews 8:3', ccc: '1548' },
+      { category: 'OT Foreshadowing', topic: 'Priest Forever', passage: 'Psalm 110:4', ccc: '1546' },
+      { category: 'Christ the High Priest', topic: 'Our High Priest', passage: 'Hebrews 4:14–16', ccc: '1549' },
+      { category: 'Shared Priesthood', topic: 'Royal Priesthood', passage: '1 Peter 2:9', ccc: '1268' },
+      { category: 'Apostolic Ordination', topic: 'Laying on of Hands', passage: 'Acts 6:6', ccc: '1538' },
+    ],
+  },
+  {
+    title: 'Why Be Catholic',
+    rows: [
+      { category: 'Founded by Christ', topic: 'Built on Apostles', passage: 'Ephesians 2:19–20', ccc: '857' },
+      { category: 'Only One Church', topic: 'One Faith, One Baptism', passage: 'Ephesians 4:3–6', ccc: '866' },
+      { category: 'Apostles Teaching', topic: 'Early Church Was Liturgical', passage: 'Acts 2:42', ccc: '1342' },
+      { category: 'Fullness of Truth', topic: 'Life in Abundance', passage: 'John 10:10', ccc: '816' },
+      { category: 'One Body', topic: 'One Body in Christ', passage: '1 Corinthians 12:12–27', ccc: '790' },
+    ],
+  },
+];
 
 export default function ResourcesPage() {
   return (
