@@ -352,6 +352,5 @@ export default function ResourcesPage() {
         </div>
       </section>
     </>
-    </>
   );
 }
