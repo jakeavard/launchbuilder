@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { FileText, BookOpen, Heart, Users, Compass, Download, ArrowRight } from 'lucide-react';
+import { FileText, BookOpen, Heart, Users, Compass, Download, ArrowRight, ChevronDown } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Resources',
