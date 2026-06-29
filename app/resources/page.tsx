@@ -240,7 +240,9 @@ export default function ResourcesPage() {
       </section>
 
       {categories.map((category) => {
-        const categoryResources = resources.filter((r) => r.category === category);
+        const categoryResources = resources.filter(
+          (r) => r.category === category && r.active !== false
+         );
         return (
           <section
             key={category}
