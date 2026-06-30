@@ -5,10 +5,36 @@ import { Mail, ArrowRight, Check } from 'lucide-react';
 
 export function NewsletterSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    
+    // This injects your requested subject line automatically into Formspree
+    formData.append("_subject", "New Subscriber to Newsletter");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xyznnaaj", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        console.error("Formspree submission failed");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -38,15 +64,18 @@ export function NewsletterSection() {
             >
               <input
                 type="email"
+                name="email" // 1. Added name="email" so Formspree captures the input
                 placeholder="your@email.com"
                 required
-                className="flex-1 w-full px-4 py-3 text-sm rounded-full bg-white/10 border border-forest-700 text-white placeholder:text-forest-400 focus:outline-none focus:ring-2 focus:ring-forest-400"
+                disabled={loading}
+                className="flex-1 w-full px-4 py-3 text-sm rounded-full bg-white/10 border border-forest-700 text-white placeholder:text-forest-400 focus:outline-none focus:ring-2 focus:ring-forest-400 disabled:opacity-50"
               />
               <button
                 type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-full bg-white text-forest-900 hover:bg-forest-100 transition-colors"
+                disabled={loading}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-full bg-white text-forest-900 hover:bg-forest-100 transition-colors disabled:opacity-50"
               >
-                Subscribe
+                {loading ? 'Submitting...' : 'Subscribe'}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
