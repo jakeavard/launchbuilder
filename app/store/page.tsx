@@ -1,9 +1,8 @@
 'use client';
-
-import { useEffect } from 'react'; // Add useEffect to your existing react imports
-
 import { Metadata } from 'next';
 import { ShoppingBag, ArrowRight, ExternalLink } from 'lucide-react';
+import { useEffect } from 'react'; // Add useEffect to your existing react imports
+
 
 export const metadata: Metadata = {
   title: 'Store',
