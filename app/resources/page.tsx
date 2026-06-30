@@ -239,6 +239,64 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+      
+      {/* Memory System */}
+      <section id="memory-system" className="py-16 md:py-24 border-t border-border bg-neutral-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-forest-700 mb-4">
+              Memory System
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
+              Catholic Apologetics — Categorical Memory System
+            </h2>
+            <p className="mt-3 text-lg text-muted-foreground">
+              Scripture + Catechism for Evangelization & Discipleship
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-border p-8 md:p-12 mb-12">
+            <h3 className="text-xl font-bold text-foreground mb-4">
+              What is the Memory System?
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              &ldquo;Always be ready to give an explanation to anyone who asks you for a reason for your hope&rdquo; (1 Peter 3:15). Imagine having the entire foundation of your faith — from the Eucharist to the Papacy — at your fingertips, ready for any conversation. This categorical memory system is your ultimate Catholic apologetics toolkit, strategically organizing essential doctrines alongside the specific Scripture and Catechism (CCC) references that prove them. It is more than just a mnemonic tool; it is a high-impact roadmap for evangelization that empowers you to strengthen, articulate, and defend the Truth with unshakable confidence.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {memorySystemSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  {section.title}
+                </h3>
+                <div className="overflow-x-auto rounded-xl border border-border bg-white">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-forest-50 text-left">
+                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Category</th>
+                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Topic</th>
+                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Passage</th>
+                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">CCC</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border">
+                      {section.rows.map((row, i) => (
+                        <tr key={i} className="hover:bg-neutral-50 transition-colors">
+                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.category}</td>
+                          <td className="px-4 py-3 text-foreground font-medium whitespace-nowrap">{row.topic}</td>
+                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.passage}</td>
+                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.ccc}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {categories.map((category) => {
         const categoryResources = resources.filter(
@@ -297,63 +355,7 @@ export default function ResourcesPage() {
           </section>
         );
       })}
-       {/* Memory System */}
-      <section id="memory-system" className="py-16 md:py-24 border-t border-border bg-neutral-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-forest-700 mb-4">
-              Memory System
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground leading-tight">
-              Catholic Apologetics — Categorical Memory System
-            </h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Scripture + Catechism for Evangelization & Discipleship
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white border border-border p-8 md:p-12 mb-12">
-            <h3 className="text-xl font-bold text-foreground mb-4">
-              What is the Memory System?
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              &ldquo;Always be ready to give an explanation to anyone who asks you for a reason for your hope&rdquo; (1 Peter 3:15). Imagine having the entire foundation of your faith — from the Eucharist to the Papacy — at your fingertips, ready for any conversation. This categorical memory system is your ultimate Catholic apologetics toolkit, strategically organizing essential doctrines alongside the specific Scripture and Catechism (CCC) references that prove them. It is more than just a mnemonic tool; it is a high-impact roadmap for evangelization that empowers you to strengthen, articulate, and defend the Truth with unshakable confidence.
-            </p>
-          </div>
-
-          <div className="space-y-16">
-            {memorySystemSections.map((section) => (
-              <div key={section.title}>
-                <h3 className="text-xl font-bold text-foreground mb-4">
-                  {section.title}
-                </h3>
-                <div className="overflow-x-auto rounded-xl border border-border bg-white">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="bg-forest-50 text-left">
-                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Category</th>
-                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Topic</th>
-                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">Passage</th>
-                        <th className="px-4 py-3 font-semibold text-forest-900 whitespace-nowrap">CCC</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-border">
-                      {section.rows.map((row, i) => (
-                        <tr key={i} className="hover:bg-neutral-50 transition-colors">
-                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.category}</td>
-                          <td className="px-4 py-3 text-foreground font-medium whitespace-nowrap">{row.topic}</td>
-                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.passage}</td>
-                          <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.ccc}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+       
     </>
   );
 }
