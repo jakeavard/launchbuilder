@@ -3,6 +3,7 @@ import { ShoppingBag, ArrowRight, ExternalLink } from 'lucide-react';
 import TitherButton from './TitherButton'; // 2. Import your new sub-component
 
 
+
 export const metadata: Metadata = {
   title: 'Store',
   description:
