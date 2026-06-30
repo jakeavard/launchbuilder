@@ -1,7 +1,6 @@
-'use client';
 import { Metadata } from 'next';
 import { ShoppingBag, ArrowRight, ExternalLink } from 'lucide-react';
-import { useEffect } from 'react'; // Add useEffect to your existing react imports
+import TitherButton from './TitherButton'; // 2. Import your new sub-component
 
 
 export const metadata: Metadata = {
@@ -93,29 +92,7 @@ export default function StorePage() {
           </a>
         </div>
       </section>
-      {/* New Separated Line Container For Embed Element */} 
-      <div className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border"> 
-        <div 
-          data-tither-org="tither" 
-          data-tither-tech="" 
-          data-button-text="Give Now" 
-          data-color="#7c3aed" 
-        />
-        
-        {/* Dynamic script injection to prevent the button from vanishing */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var s = document.createElement('script');
-                s.src = 'https://tither.us';
-                s.async = true;
-                document.body.appendChild(s);
-              })();
-            `
-          }}
-        />
-      </div>
+    <TitherButton />
     </>
   );
 }
