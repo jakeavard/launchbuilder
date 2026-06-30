@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect } from 'react'; // Add useEffect to your existing react imports
+
 import { Metadata } from 'next';
 import { ShoppingBag, ArrowRight, ExternalLink } from 'lucide-react';
 
@@ -90,15 +94,28 @@ export default function StorePage() {
           </a>
         </div>
       </section>
-      {/* New Separated Line Container For Embed Element */}
- <div className="tither-widget-container">
+      {/* New Separated Line Container For Embed Element */} 
+      <div className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border"> 
         <div 
           data-tither-org="tither" 
           data-tither-tech="" 
           data-button-text="Give Now" 
-          data-color="#7c3aed"
+          data-color="#7c3aed" 
         />
-        <script src="https://tither.us" async /> 
+        
+        {/* Dynamic script injection to prevent the button from vanishing */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var s = document.createElement('script');
+                s.src = 'https://tither.us';
+                s.async = true;
+                document.body.appendChild(s);
+              })();
+            `
+          }}
+        />
       </div>
     </>
   );
