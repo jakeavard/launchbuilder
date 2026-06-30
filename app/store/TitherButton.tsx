@@ -19,7 +19,7 @@ export default function TitherButton() {
   return (
     <div className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border"> 
       <div 
-        data-tither-org="tither" 
+        data-tither-org="tither-tech" 
         data-tither-tech="" 
         data-button-text="Give Now" 
         data-color="#7c3aed" 
