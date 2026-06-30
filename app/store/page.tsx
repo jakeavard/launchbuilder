@@ -93,12 +93,12 @@ export default function StorePage() {
       </section>
       {/* New Separated Line Container For Embed Element */}
 <section className="py-12 bg-gray-50 border-t border-b border-border flex justify-center items-center">
-  <script
+  <Script
   src="https://tither.us/embed.js"
   data-tither-org="tither-tech"
   data-button-text="Give Now"
   data-color="#7c3aed"
-></script>
+></Script>
 </section>
     </>
   );
