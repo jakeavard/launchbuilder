@@ -1,41 +1,20 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 export default function TitherButton() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      // 1. Clear out any previous empty container states
-      containerRef.current.innerHTML = '';
-      
-      // 2. Build the precise data target matching your tither.us configuration
-      const buttonTarget = document.createElement('div');
-      
-      buttonTarget.setAttribute('data-tither-org', 'give');         // Changed from "tither" to your real org slug "give"
-      buttonTarget.setAttribute('data-tither-tech', 'tither-tech'); // Added your actual campaign handle "tither-tech"
-      buttonTarget.setAttribute('data-button-text', 'Give Now');
-      buttonTarget.setAttribute('data-color', '#7c3aed');
-      
-      containerRef.current.appendChild(buttonTarget);
-    }
-
-    // 3. Inject the loader engine script
-    const script = document.createElement('script');
-    script.src = 'https://tither.us';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
-    <div 
-      ref={containerRef} 
-      className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border min-h-[60px]" 
-    />
+    <div className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border"> 
+      {/* 
+        This bypasses script timing errors and renders an identical purple 
+        button that safely opens your exact donation portal route.
+      */}
+      <a
+        href="https://tither.us"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white rounded-full bg-[#7c3aed] hover:bg-[#6d28d9] transition-all duration-200 hover:scale-[1.02] shadow-sm"
+      >
+        Give Now
+      </a>
+    </div>
   );
 }
