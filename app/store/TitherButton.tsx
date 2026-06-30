@@ -1,29 +1,41 @@
-'use client'; // This directive stays safe here isolated from metadata
+'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function TitherButton() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    // Dynamically inject the script only on the client side
+    if (containerRef.current) {
+      // 1. Clear out any previous empty container states
+      containerRef.current.innerHTML = '';
+      
+      // 2. Build the precise data target matching your tither.us configuration
+      const buttonTarget = document.createElement('div');
+      
+      buttonTarget.setAttribute('data-tither-org', 'give');         // Changed from "tither" to your real org slug "give"
+      buttonTarget.setAttribute('data-tither-tech', 'tither-tech'); // Added your actual campaign handle "tither-tech"
+      buttonTarget.setAttribute('data-button-text', 'Give Now');
+      buttonTarget.setAttribute('data-color', '#7c3aed');
+      
+      containerRef.current.appendChild(buttonTarget);
+    }
+
+    // 3. Inject the loader engine script
     const script = document.createElement('script');
     script.src = 'https://tither.us';
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      // Clean up the script asset when leaving the page
       document.body.removeChild(script);
     };
   }, []);
 
   return (
-    <div className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border"> 
-      <div 
-        data-tither-org="tither-tech" 
-        data-tither-tech="" 
-        data-button-text="Give Now" 
-        data-color="#7c3aed" 
-      />
-    </div>
+    <div 
+      ref={containerRef} 
+      className="tither-widget-container py-16 flex justify-center bg-neutral-50 border-t border-border min-h-[60px]" 
+    />
   );
 }
