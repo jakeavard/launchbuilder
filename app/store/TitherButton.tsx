@@ -8,7 +8,7 @@ export default function TitherButton() {
         button that safely opens your exact donation portal route.
       */}
       <a
-        href="https://tither.us"
+        href="https://tither.us/org/jake-avard"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white rounded-full bg-[#7c3aed] hover:bg-[#6d28d9] transition-all duration-200 hover:scale-[1.02] shadow-sm"
