@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { ShoppingBag, ArrowRight, ExternalLink } from 'lucide-react';
-import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Store',
@@ -92,13 +91,15 @@ export default function StorePage() {
         </div>
       </section>
       {/* New Separated Line Container For Embed Element */}
-<div
-  data-tither-org="tither-tech"
-  data-button-text="Give Now"
-  data-color="#7c3aed"
-></div>
-
-<script src="https://tither.us/embed.js" async></script>
+ <div className="tither-widget-container">
+        <div 
+          data-tither-org="tither" 
+          data-tither-tech="" 
+          data-button-text="Give Now" 
+          data-color="#7c3aed"
+        />
+        <script src="https://tither.us" async /> 
+      </div>
     </>
   );
 }
