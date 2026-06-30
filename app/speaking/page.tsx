@@ -93,7 +93,7 @@ export default function SpeakingPage() {
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
               Keynotes, retreats, and conversations on faith, family, mission,
-              discipline, and the long road of becoming.
+              discipline, and the long road of becoming who you were meant to be.
             </p>
             <div className="mt-8">
               <Link

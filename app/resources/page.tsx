@@ -10,85 +10,6 @@ export const metadata: Metadata = {
     canonical: 'https://jakeavard.com/resources',
   },
 };
-
-const resources = [
-  {
-    id: '1',
-    title: 'Daily Examen Guide',
-    description: 'A printable guide to the Ignatian Examen, adapted for busy fathers and professionals.',
-    category: 'Personal Systems',
-    type: 'pdf',
-    url: '/images/dailyexam.pdf',
-  },
-  {
-    id: '2',
-    title: 'The Trinity and the Family',
-    description: 'A theological reflection on how the Trinity reveals the inner logic of family life.',
-    category: 'Theology',
-    type: 'article',
-    url: '/images/morning.pdf',
-    active: false,
-  },
-  {
-    id: '3',
-    title: 'Recovery Roadmap',
-    description: 'A framework for understanding addiction, recovery, and the role of grace in healing.',
-    category: 'Addiction Recovery',
-    type: 'pdf',
-    url: '#',
-    active: false,
-  },
-  {
-    id: '4',
-    title: 'Family Meeting Template',
-    description: 'A simple weekly template for running family meetings that build connection and shared purpose.',
-    category: 'Family & Fatherhood',
-    type: 'pdf',
-    url: '#',
-    active: false,
-  },
-  {
-    id: '5',
-    title: 'Recommended Reading List',
-    description: 'Curated books on faith, fatherhood, mission, and the examined life.',
-    category: 'Recommended Books',
-    type: 'article',
-    url: '#',
-  },
-  {
-    id: '6',
-    title: 'Morning Routine Builder',
-    description: 'A worksheet for designing a morning routine rooted in prayer, movement, and intention.',
-    category: 'Personal Systems',
-    type: 'pdf',
-    url: '/images/morning.pdf',
-  },
-];
-
-const categories = [
-  'Personal Systems',
-  'Theology',
-  'Addiction Recovery',
-  'Family & Fatherhood',
-  'Recommended Books',
-];
-
-const categoryIcons: Record<string, React.ReactNode> = {
-  'Personal Systems': <Compass className="h-5 w-5" />,
-  'Theology': <BookOpen className="h-5 w-5" />,
-  'Addiction Recovery': <Heart className="h-5 w-5" />,
-  'Family & Fatherhood': <Users className="h-5 w-5" />,
-  'Recommended Books': <BookOpen className="h-5 w-5" />,
-};
-
-const categoryDescriptions: Record<string, string> = {
-  'Personal Systems': 'Tools and frameworks for building daily rhythms, morning routines, and sustainable habits.',
-  'Theology': 'Essays and guides on the Trinity, the Church, sacraments, and the Christian intellectual tradition.',
-  'Addiction Recovery': 'Resources for understanding addiction, grace, and the path to healing and freedom.',
-  'Family & Fatherhood': 'Templates, guides, and reflections for building family culture and intentional fatherhood.',
-  'Recommended Books': 'Curated reading lists on faith, fatherhood, mission, and the examined life.',
-};
-
 const memorySystemSections = [
   {
     title: 'Authority of the Church',
@@ -212,6 +133,86 @@ const memorySystemSections = [
     ],
   },
 ];
+
+const resources = [
+  {
+    id: '1',
+    title: 'Daily Examen Guide',
+    description: 'A printable guide to the Ignatian Examen, adapted for busy fathers and professionals.',
+    category: 'Personal Systems',
+    type: 'pdf',
+    url: '/images/dailyexam.pdf',
+  },
+  {
+    id: '2',
+    title: 'The Trinity and the Family',
+    description: 'A theological reflection on how the Trinity reveals the inner logic of family life.',
+    category: 'Theology',
+    type: 'article',
+    url: '/images/morning.pdf',
+    active: false,
+  },
+  {
+    id: '3',
+    title: 'Recovery Roadmap',
+    description: 'A framework for understanding addiction, recovery, and the role of grace in healing.',
+    category: 'Addiction Recovery',
+    type: 'pdf',
+    url: '#',
+    active: false,
+  },
+  {
+    id: '4',
+    title: 'Family Meeting Template',
+    description: 'A simple weekly template for running family meetings that build connection and shared purpose.',
+    category: 'Family & Fatherhood',
+    type: 'pdf',
+    url: '#',
+    active: false,
+  },
+  {
+    id: '5',
+    title: 'Recommended Reading List',
+    description: 'Curated books on faith, fatherhood, mission, and the examined life.',
+    category: 'Recommended Books',
+    type: 'article',
+    url: '#',
+  },
+  {
+    id: '6',
+    title: 'Morning Routine Builder',
+    description: 'A worksheet for designing a morning routine rooted in prayer, movement, and intention.',
+    category: 'Personal Systems',
+    type: 'pdf',
+    url: '/images/morning.pdf',
+  },
+];
+
+const categories = [
+  'Personal Systems',
+  'Theology',
+  'Addiction Recovery',
+  'Family & Fatherhood',
+  'Recommended Books',
+];
+
+const categoryIcons: Record<string, React.ReactNode> = {
+  'Personal Systems': <Compass className="h-5 w-5" />,
+  'Theology': <BookOpen className="h-5 w-5" />,
+  'Addiction Recovery': <Heart className="h-5 w-5" />,
+  'Family & Fatherhood': <Users className="h-5 w-5" />,
+  'Recommended Books': <BookOpen className="h-5 w-5" />,
+};
+
+const categoryDescriptions: Record<string, string> = {
+  'Personal Systems': 'Tools and frameworks for building daily rhythms, morning routines, and sustainable habits.',
+  'Theology': 'Essays and guides on the Trinity, the Church, sacraments, and the Christian intellectual tradition.',
+  'Addiction Recovery': 'Resources for understanding addiction, grace, and the path to healing and freedom.',
+  'Family & Fatherhood': 'Templates, guides, and reflections for building family culture and intentional fatherhood.',
+  'Recommended Books': 'Curated reading lists on faith, fatherhood, mission, and the examined life.',
+};
+
+
 
 export default function ResourcesPage() {
   return (

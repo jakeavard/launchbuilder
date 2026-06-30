@@ -18,7 +18,7 @@ export function AboutPreview() {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 I am a Catholic missionary, husband, and father of two. For over
-                a decade, I have walked with men and families through the
+                a six years, I have walked with men through the
                 challenges of faith, addiction, fatherhood, and mission.
               </p>
               <p>

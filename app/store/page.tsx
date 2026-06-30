@@ -93,7 +93,7 @@ export default function StorePage() {
           </a>
         </div>
       </section>
-    <TitherButton />
+      {/* <TitherButton /> */}
     </>
   );
 }
