@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Mail, MapPin, Clock, Send, Check } from 'lucide-react';
 
 export default function ContactPage() {
@@ -84,7 +85,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Form */}
+            {/* Form Container */}
             <div className="lg:col-span-2">
               <ContactForm />
             </div>
@@ -96,12 +97,54 @@ export default function ContactPage() {
 }
 
 function ContactForm() {
-  
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xyznnaaj", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        console.error("Formspree submission failed");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // If the form has been sent successfully, render this inline confirmation block
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center space-y-4 rounded-2xl bg-white border border-border p-12 min-h-[400px]">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-forest-50 text-forest-700 mb-2 animate-in fade-in zoom-in-75 duration-300">
+          <Check className="h-8 w-8" />
+        </div>
+        <h3 className="text-2xl font-bold text-foreground">Message Sent!</h3>
+        <p className="text-muted-foreground max-w-sm leading-relaxed">
+          Thanks for reaching out. Your message is on its way, and I&apos;ll get back to you as soon as possible.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <form
-      action="https://formspree.io/f/xyznnaaj"
-      method="POST"
+      onSubmit={handleSubmit}
       className="space-y-6 rounded-2xl bg-white border border-border p-8"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -114,7 +157,8 @@ function ContactForm() {
             name="name"
             type="text"
             required
-            className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700"
+            disabled={loading}
+            className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700 disabled:opacity-50"
             placeholder="Your name"
           />
         </div>
@@ -127,7 +171,8 @@ function ContactForm() {
             name="email"
             type="email"
             required
-            className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700"
+            disabled={loading}
+            className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700 disabled:opacity-50"
             placeholder="your@email.com"
           />
         </div>
@@ -141,14 +186,15 @@ function ContactForm() {
           id="subject"
           name="subject"
           required
-          className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-forest-700"
+          disabled={loading}
+          className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-forest-700 disabled:opacity-50"
         >
           <option value="">Select a topic</option>
-          <option value="speaking">Speaking Inquiry</option>
-          <option value="collaboration">Collaboration</option>
-          <option value="resources">Resource Question</option>
-          <option value="store">Store / Order</option>
-          <option value="other">Other</option>
+          <option value="Speaking Inquiry">Speaking Inquiry</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Resource Question">Resource Question</option>
+          <option value="Store / Order">Store / Order</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
@@ -161,16 +207,18 @@ function ContactForm() {
           name="message"
           rows={6}
           required
-          className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700 resize-none"
+          disabled={loading}
+          className="w-full px-4 py-3 text-sm rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-forest-700 resize-none disabled:opacity-50"
           placeholder="Tell me about your event, project, or question..."
         />
       </div>
 
       <button
         type="submit"
-        className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-full bg-forest-800 text-white hover:bg-forest-900 transition-all duration-200 hover:scale-[1.02]"
+        disabled={loading}
+        className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold rounded-full bg-forest-800 text-white hover:bg-forest-900 transition-all duration-200 hover:scale-[1.02] disabled:opacity-50"
       >
-        Send Message
+        {loading ? 'Sending...' : 'Send Message'}
         <Send className="h-4 w-4" />
       </button>
     </form>
